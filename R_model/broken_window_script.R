@@ -187,8 +187,8 @@ pyramid_plot<- function(data, title="", significance=0.05, plot_insig=TRUE, rsq_
   plot<- ggplot(out) +
     theme_classic() +
     geom_hline(yintercept = true_slope, linetype = 2) +
-    geom_hline(yintercept = max_true, linetype = 3, color="grey") +
-    geom_hline(yintercept = min_true, linetype = 3, color="grey") +
+    geom_hline(yintercept = max_true, linetype = 3, color="grey38") +
+    geom_hline(yintercept = min_true, linetype = 3, color="grey38") +
     aes(y = slope, x = N_years,  ymin = (slope-slope_se), 
         ymax = (slope+slope_se), shape=significance, color=significance) +
     geom_linerange(show.legend = F)+ 
@@ -430,7 +430,7 @@ wrongness_plot<-function(data, significance=0.05, min_percent=95, error_multiply
   maxyears<-max(wrongness$window_length)
   plot<- ggplot(wrongness) +
     theme_classic() +
-    geom_vline(xintercept = (threshold-0.1), linetype = 3, color="grey") +
+    geom_vline(xintercept = (threshold-0.1), linetype = 3, color="grey38") +
     geom_smooth(aes(y = proportion_wrong, x = window_length, 
                     linetype="Propwrong", color="Propwrong"), se=FALSE)+
     geom_point(aes(y = proportion_wrong, x = window_length, 
